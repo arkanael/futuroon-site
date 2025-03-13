@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Instituto FuturoOn - Inspiramos a criatividade e a transformação através
+      de inclusão digital e social
+    </title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: #2d3654;
+        --secondary-color: #e74c3c;
+        --accent-color: #ff3e96;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Top Bar */
+      .top-bar {
+        background-color: #222;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .envato-logo {
+        color: white;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .envato-logo img {
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      .buy-now-btn {
+        background-color: #8bc34a;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      /* Info Bar */
+      .info-bar {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .info-bar a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .info-bar .social-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .info-bar .contact-info {
+        font-size: 0.9rem;
+      }
+
+      .info-bar .language-selector select {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 0.9rem;
+      }
+
+      .info-bar .language-selector select option {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .info-bar .contact-info {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .info-bar .contact-info > * {
+          margin-bottom: 5px;
+        }
+      }
+
+      /* Navigation */
+      .navbar {
+        padding: 15px 0;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        height: 50px;
+      }
+
+      .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+        margin: 0 10px;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .donate-btn {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-weight: 500;
+      }
+
+      .donate-btn:hover {
+        background-color: #c0392b;
+        color: white;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-tagline {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Decorative Elements */
+      .decoration {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .decoration.heart {
+        top: 20%;
+        left: 10%;
+        color: var(--accent-color);
+        font-size: 2rem;
+        animation: float 3s infinite ease-in-out;
+      }
+
+      .decoration.circle {
+        top: 30%;
+        left: 5%;
+        color: var(--accent-color);
+        font-size: 2rem;
+        animation: spin 10s infinite linear;
+      }
+
+      .decoration.star {
+        top: 15%;
+        right: 10%;
+        color: #ffc107;
+        font-size: 2rem;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-tagline {
+          font-size: 1.5rem;
+        }
+
+        .info-bar .text-end {
+          text-align: center !important;
+        }
+
+        .info-bar .text-start {
+          text-align: center !important;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #343a40;
+        color: #ffffff;
+        padding: 40px 0;
+      }
+
+      footer h5 {
+        border-bottom: 1px solid #e74c3c;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      footer ul li {
+        margin-bottom: 10px;
+      }
+
+      footer p,
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #e74c3c;
+      }
+
+      footer .form-control {
+        border-radius: 0;
+      }
+
+      footer .btn {
+        border-radius: 0;
+      }
+
+      .btn-danger {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .info-bar .text-end {
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Info Bar -->
+    <div class="info-bar">
+      <div class="d-flex justify-content-between align-items-center px-4">
+        <div class="social-links">
+          <span>Siga-nos</span>
+          <a
+            href="https://www.facebook.com/profile.php?id=61552470697052"
+            class="ms-3"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/futuroon/" class="ms-2">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="contact-info d-flex align-items-center">
+          <a href="tel:+5521970872194" class="me-3">
+            <i class="fas fa-phone-alt me-1"></i> 21 97087-2194
+          </a>
+          <span class="me-3">
+            <i class="fas fa-map-marker-alt me-1"></i> Rua Mululo da Veiga -
+            Covanca - São Gonçalo, RJ
+          </span>
+          <div class="language-selector d-flex align-items-center">
+            <span class="globe me-1"><i class="fas fa-globe"></i></span>
+            <select class="form-select form-select-sm">
+              <option value="pt">Português</option>
+              <option value="en">Inglês</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="logo.jpeg" alt="Logo do FuturoOn" /> -->
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre Nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tripulação</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Apadrinhamento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notícias</a>
+            </li>
+          </ul>
+          <a href="#" class="donate-btn ms-3">
+            <i class="fas fa-heart me-2"></i> Doar Agora
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Decorative Elements -->
+      <div class="decoration heart">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="decoration circle">
+        <i class="fas fa-circle"></i>
+      </div>
+      <div class="decoration star">
+        <i class="fas fa-star"></i>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-tagline">
+            Unidos por um sonho, estamos transformando a periferia através da
+            tecnologia!
+          </h2>
+          <h1 class="hero-title">
+            Promover o desenvolvimento pessoal e profissional de jovens e
+            adultos em vulnerabilidade social utilizando a tecnologia.
+          </h1>
+          <a href="#" class="btn btn-lg donate-btn">
+            <i class="fas fa-heart me-2"></i> Doe Agora
+          </a>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <img
+        src="logo.jpeg"
+        alt="Ilustração de apoio comunitário"
+        class="position-absolute bottom-0 start-0"
+        style="height: 200px; opacity: 0.8"
+      />
+    </section>
+
+    <!-- Featured Cause Section -->
+    <section class="featured-cause py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h3 class="text-danger">
+              Nascemos através de um sonho e juntos estamos transformando a
+              periferia através da tecnologia!
+            </h3>
+            <h2 class="fw-bold">Transformar vidas é a Nossa prioridade.</h2>
+            <p>
+              Futuroon é uma organização sem fins lucrativos que integra
+              tecnologia, cultura e e-sports, promovendo a inclusão e o
+              desenvolvimento pessoal de jovens periféricos. Buscamos criar
+              oportunidades, inspirar a criatividade e transformar vidas,
+              visando construir um futuro promissor e sustentável.
+            </p>
+            <div class="d-flex">
+              <div class="me-4">
+                <h4 class="text-warning">+300</h4>
+                <p>Alunos</p>
+              </div>
+              <div>
+                <h4 class="text-danger">15</h4>
+                <p>Voluntários</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <iframe
+              class="elementor-video"
+              frameborder="0"
+              allowfullscreen=""
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              title="Por que o Futuroon existe?"
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/gArnOivvxgg?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Ffuturoon.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Ffuturoon.com%2F%23sobre&amp;aoriginsup=1&amp;gporigin=https%3A%2F%2Ffuturoon.com%2Fapadrinhe%2F&amp;vf=6"
+              id="widget2"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Our Volunteers Section -->
+    <section class="volunteers py-5">
+      <div class="container text-center">
+        <h3 class="text-danger">Nós mudamos sua vida e mundo</h3>
+        <h2 class="fw-bold">Conheça nossa Tripulação</h2>
+        <div
+          id="volunteersCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex justify-content-center">
+                <div class="text-center">
+                  <img
+                    src="luizguilherme.png"
+                    alt="Luiz Guilherme Bandeira"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Luiz Guilherme</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="thais.jpeg"
+                    alt="Thais (CEO)"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Thais</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="marta.jpeg"
+                    alt="Marta"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Marta</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="luiza.png"
+                    alt="Luiza"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Luiza</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center">
+                <div class="text-center">
+                  <img
+                    src="marlon.png"
+                    alt="Marlon"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Marlon</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Elisa Cardoso"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Elisa Cardoso</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Hygor Nery"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Hygor Nery</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Duda"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Duda</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center">
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Alexandre Victor"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Alexandre Victor</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Nicole"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Nicole</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Yasmim Gomes"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Yasmim Gomes</p>
+                </div>
+                <div class="text-center">
+                  <img
+                    src="semfoto.png"
+                    alt="Thayná Souza"
+                    class="d-block w-20 mx-2 rounded-circle img-fluid"
+                  />
+                  <p class="mt-2">Thayná Souza</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#volunteersCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#volunteersCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5">
+      <div class="container text-center">
+        <h3 class="text-danger">Nós mudamos sua vida e mundo</h3>
+        <h2 class="fw-bold">Depoimentos</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <p class="card-text">
+                  "Esse curso de Games tem me ajudado muito em questão de
+                  criatividade e até em prestar atenção. São muitas coisas pra
+                  aprender."
+                </p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="">
+                    <h5 class="fw-bold">Aluna</h5>
+                    <p class="mb-0">Júlia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <p class="card-text">
+                  "O Futuroon é um projeto que incentiva os adolescentes a ter
+                  uma visão melhor do futuro."
+                </p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="">
+                    <h5 class="fw-bold">Aluno</h5>
+                    <p class="mb-0">Kaique</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <p class="card-text">
+                  "Oi, gente. Estou fazendo um jogo do Mario aqui no Futuroon.
+                  Vem com a gente!"
+                </p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="">
+                    <h5 class="fw-bold">Aluno</h5>
+                    <p class="mb-0">Igor</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donations and Sponsorship Section -->
+    <section class="donations mb-3">
+      <div class="container text-center">
+        <h3 class="text-danger">Contribua para um Futuro Melhor</h3>
+        <h2 class="fw-bold">Doações e Apadrinhamento</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <iframe
+                class="card-img-top"
+                src="https://www.youtube.com/embed/9Tv-nrwdhYY"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body">
+                <h5 class="card-title">Emanuelle</h5>
+                <p class="card-text">
+                  "Enquanto aprendo no curso, estou me habilitando a conquistar
+                  um emprego melhor e a me desenvolver profissionalmente,
+                  abrindo portas para um futuro mais promissor."
+                </p>
+                <div class="progress mb-3">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 0%"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Alcançado: R$0,00</p>
+                <p>Meta: R$900,00</p>
+                <a href="#" class="btn btn-danger">Doe Agora</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <iframe
+                class="card-img-top"
+                src="https://www.youtube.com/embed/RwlAaPFaUFg"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body">
+                <h5 class="card-title">Kauê</h5>
+                <p class="card-text">
+                  "Este é o Kauê, ele tem 13 anos e está fazendo o curso de
+                  informática e programação. Kauê está determinado a aprender no
+                  curso para, no futuro, poder trabalhar e ajudar sua família."
+                </p>
+                <div class="progress mb-3">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 0%"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Alcançado: R$0,00</p>
+                <p>Meta: R$900,00</p>
+                <a href="#" class="btn btn-danger">Doe Agora</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <iframe
+                class="card-img-top"
+                src="https://www.youtube.com/embed/zckqqUPh8fU"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+              <div class="card-body">
+                <h5 class="card-title">Alexandre Vitor</h5>
+                <p class="card-text">
+                  "Alexandre Vitor, que atualmente trabalha como motoboy, vê no
+                  curso uma oportunidade de mudar de carreira e alcançar novos
+                  horizontes profissionais."
+                </p>
+                <div class="progress mb-3">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 0%"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Alcançado: R$0,00</p>
+                <p>Meta: R$900,00</p>
+                <a href="#" class="btn btn-danger">Doe Agora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda de Aulas Section -->
+    <section class="class-schedule py-5 bg-light">
+      <div class="container">
+        <h3 class="text-danger text-center">Próximas Turmas</h3>
+        <h2 class="fw-bold text-center mb-5">Cursos Disponíveis</h2>
+
+        <div class="row">
+          <!-- Turmas Disponíveis -->
+          <div class="col-md-8 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <div class="upcoming-course mb-4 p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h4 class="mb-2">Programação Básica</h4>
+                      <p class="mb-2">
+                        <i class="fas fa-calendar-alt me-2"></i>Início: 15 de
+                        Abril, 2025
+                      </p>
+                      <p class="mb-2">
+                        <i class="fas fa-clock me-2"></i>Segunda e Quarta, 14:00
+                        - 16:00
+                      </p>
+                      <p class="mb-0">
+                        <i class="fas fa-users me-2"></i>Vagas: 15
+                      </p>
+                    </div>
+                    <a href="#" class="btn btn-danger">Inscrever-se</a>
+                  </div>
+                </div>
+
+                <div class="upcoming-course mb-4 p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h4 class="mb-2">Robótica para Iniciantes</h4>
+                      <p class="mb-2">
+                        <i class="fas fa-calendar-alt me-2"></i>Início: 20 de
+                        Abril, 2025
+                      </p>
+                      <p class="mb-2">
+                        <i class="fas fa-clock me-2"></i>Terça e Quinta, 15:30 -
+                        17:30
+                      </p>
+                      <p class="mb-0">
+                        <i class="fas fa-users me-2"></i>Vagas: 10
+                      </p>
+                    </div>
+                    <a href="#" class="btn btn-danger">Inscrever-se</a>
+                  </div>
+                </div>
+
+                <div class="upcoming-course mb-4 p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h4 class="mb-2">Inglês Técnico</h4>
+                      <p class="mb-2">
+                        <i class="fas fa-calendar-alt me-2"></i>Início: 25 de
+                        Abril, 2025
+                      </p>
+                      <p class="mb-2">
+                        <i class="fas fa-clock me-2"></i>Sexta, 13:00 - 16:00
+                      </p>
+                      <p class="mb-0">
+                        <i class="fas fa-users me-2"></i>Vagas: 20
+                      </p>
+                    </div>
+                    <a href="#" class="btn btn-danger">Inscrever-se</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Informações Adicionais -->
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Informações dos Cursos</h4>
+
+                <div class="course-info mb-4">
+                  <h5 class="mb-3">Requisitos</h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-success me-2"></i>Idade
+                      mínima: 14 anos
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-success me-2"></i
+                      >Ensino fundamental completo
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-check-circle text-success me-2"></i
+                      >Acesso a computador/internet
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="course-info mb-4">
+                  <h5 class="mb-3">Benefícios</h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="fas fa-star text-warning me-2"></i>Material
+                      didático gratuito
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-star text-warning me-2"></i>Certificado
+                      de conclusão
+                    </li>
+                    <li class="mb-2">
+                      <i class="fas fa-star text-warning me-2"></i>Mentoria
+                      individual
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="text-center mt-4">
+                  <a href="#" class="btn btn-outline-danger"
+                    >Ver Todos os Cursos</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>FuturoOn</h5>
+            <p>
+              Conectamos a favela com as oportunidades, inspiramos a
+              criatividade e a transformação através de inclusão digital e
+              social, visando construir um futuro promissor e sustentável para
+              todos.
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Informações</h5>
+            <ul class="list-unstyled">
+              <li>Depoimentos</li>
+              <li>Próximos Eventos</li>
+              <li>Nossa Equipe</li>
+              <li>Faq</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Cursos</h5>
+            <ul class="list-unstyled">
+              <li>Inglês</li>
+              <li>Robótica</li>
+              <li>Programação</li>
+              <li>Letramento Digital</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Campanhas</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://www.vakinha.com.br/vaquinha/maos-que-transformam-ajude-os-voluntarios-do-futuroon"
+                  target="_blank"
+                  >Mãos que Transformam</a
+                >
+              </li>
+              <li>Apadrinhamento Alunos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p>Telefone: <a href="tel:+5521970872194"> 21 97087-2194</a></p>
+          <p>
+            Email: <a href="mailto:futurooon@gmail.com">futurooon@gmail.com</a>
+          </p>
+          <p>Para contribuir via PIX: (CNPJ) 51.662.000/0001-98</p>
+          <p>
+            Para contribuir com equipamentos e afins:
+            <a href="https://wa.me/5521970872194">
+              https://wa.me/5521970872194</a
+            >
+          </p>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <h5>Subscreva-se</h5>
+            <p>Seja o primeiro a receber as atualizações mais recentes. .</p>
+            <form class="d-flex justify-content-center">
+              <input
+                type="email"
+                class="form-control w-50"
+                placeholder="Digite seu email"
+              />
+              <button class="btn btn-danger ms-2">
+                <i class="fas fa-envelope"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <p>© Copyright 2025 por FuturoOn</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Configuração do calendário
+      const months = [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
+      ];
+
+      let currentMonthIndex = 2; // Começa em Março (índice 2)
+      const year = 2025;
+
+      function getDaysInMonth(month, year) {
+        return new Date(year, month + 1, 0).getDate();
+      }
+
+      function getFirstDayOfMonth(month, year) {
+        return new Date(year, month, 1).getDay();
+      }
+
+      function updateCalendar() {
+        const monthTitle = document.getElementById("currentMonth");
+        const calendarBody = document.getElementById("calendarBody");
+
+        // Atualiza o título do mês
+        monthTitle.textContent = `${months[currentMonthIndex]} ${year}`;
+
+        // Limpa o calendário atual
+        calendarBody.innerHTML = "";
+
+        const daysInMonth = getDaysInMonth(currentMonthIndex, year);
+        const firstDay = getFirstDayOfMonth(currentMonthIndex, year);
+
+        let date = 1;
+        let html = "";
+
+        // Cria as semanas do calendário
+        for (let i = 0; i < 6; i++) {
+          let row = "<tr>";
+
+          for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+              // Dias do mês anterior
+              const lastMonth =
+                currentMonthIndex === 0 ? 11 : currentMonthIndex - 1;
+              const lastMonthDays = getDaysInMonth(lastMonth, year);
+              const day = lastMonthDays - (firstDay - j - 1);
+              row += `<td class="text-muted">${day}</td>`;
+            } else if (date > daysInMonth) {
+              // Dias do próximo mês
+              row += `<td class="text-muted">${date - daysInMonth}</td>`;
+              date++;
+            } else {
+              // Dias do mês atual
+              const isClassDay = j === 1 || j === 3 || j === 5; // Segunda, Quarta e Sexta
+              const className = isClassDay ? "bg-danger text-white" : "";
+              row += `<td class="${className}">${date}</td>`;
+              date++;
+            }
+          }
+
+          row += "</tr>";
+          html += row;
+
+          if (date > daysInMonth && i !== 0) break;
+        }
+
+        calendarBody.innerHTML = html;
+      }
+
+      function changeMonth(delta) {
+        currentMonthIndex += delta;
+
+        if (currentMonthIndex > 11) {
+          currentMonthIndex = 0;
+        } else if (currentMonthIndex < 0) {
+          currentMonthIndex = 11;
+        }
+
+        updateCalendar();
+      }
+
+      // Inicializa o calendário
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCalendar();
+        // ... resto do código existente ...
+      });
+
+      // Mobile menu toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            if (window.innerWidth < 992) {
+              navbarCollapse.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Add dropdown functionality
+      const dropdowns = document.querySelectorAll(".nav-link");
+      dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener("mouseenter", function () {
+          if (
+            this.nextElementSibling &&
+            this.nextElementSibling.classList.contains("dropdown-menu")
+          ) {
+            this.nextElementSibling.classList.add("show");
+          }
+        });
+
+        dropdown.addEventListener("mouseleave", function () {
+          if (
+            this.nextElementSibling &&
+            this.nextElementSibling.classList.contains("dropdown-menu")
+          ) {
+            this.nextElementSibling.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
